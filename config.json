@@ -17,7 +17,7 @@
   "dashboard": {
     "clientId": "clientId",
     "clientSecret": "Secret",
-    "URL": "https://herocraftmusic.itsherohero.repl.co",
+    "URL": "https://<repltname>.<replitname>.repl.co",
     "port": "80",
     "support": "https://discord.gg/S6d777Ph8t"
   }
