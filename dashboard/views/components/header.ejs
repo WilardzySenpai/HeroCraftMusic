@@ -1,0 +1,39 @@
+
+<link rel="icon" type="image/png" href="<%= bot.user.displayAvatarURL({ size: 128 }) %>">
+<title><%= bot.user.username %> - <%= location %></title>
+<nav class="navbar">
+  <nav class="navbar-left">
+    <a class="bot-logo" href="/">
+      <img src="<%= bot.user.displayAvatarURL() %>">
+    </a>
+    <div class="nav-items-pages">
+      <a href="https://discord.com/api/oauth2/authorize?client_id=<%= bot.user.id %>&permissions=8&scope=bot%20applications.commands">Invite</a>
+      <a href="<%= bot.dashboard.support %>">Support</a>
+      <a href="/dashboard">Dashboard</a>
+    </div>
+  </nav>
+  <nav class="navbar-right">
+    <div class="nav-item">
+      <% if(user && user.id) { %>
+        <button class="user-button" type="button" onclick="location.href='/logout'"><span class="user-button-container">
+        <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png", style="width: 60px; margin-bottom:3%; margin-right: 5px; border-radius: 30px; top: 50%;"alt="LOGO">
+          <span class="user-button-item">
+            <span class="user-button-item-top"><%= user.username %></span>
+            <br>
+            <span class="user-button-item-middle">(<%=user.id%>)</span>
+            <br>
+            <span class="user-button-item-buttom">Click me to LogOut</span>
+          </span>
+        </span>
+        </button>
+      <% } else {%>
+        <button class="user-button-login" type="button" onclick="location.href='/login'"><img src="https://media.discordapp.net/attachments/899498088660627476/916284069476720640/concours-discord-cartes-voeux-fortnite-france-6.png?width=484&height=484", style="width: 60px; margin-bottom:3%; margin-right: 10px; border-radius: 30px;"alt="LOGO">
+        <span class="user-button-item">
+          <span class="user-button-item-top">Login</span>
+          <br>
+          <span class="user-button-item-middle">Please Login First!</span>
+        </span><button>
+      <% } %>
+    </div> 
+  </nav>
+</nav>

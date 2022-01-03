@@ -1,0 +1,45 @@
+<%- include("components/header"); -%>
+
+<html>
+    <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <section style="margin-bottom: 0;">
+          <div class="main-body-top-head">
+            <h1 style="font-weight: bolder;">
+              <img src="<%= bot.user.displayAvatarURL() %>" style="width: 5%;margin-top: -0.5%;"><span style="font-size: 40px"><span style="color:#5663f7;"><%= bot.user.username %></span> | Best Music Bot</span>
+            </h1>
+          </div>
+          <div class="main-body-top-subtext">
+            <p style="font-style: italic;font-size: 30px;">Just another Discord Music Bot!<br><p>Serving <%= bot.guilds.cache.reduce((acc, value) => acc + value.memberCount, 0) %> Users in <%= bot.guilds.cache.size %> Servers</p></p>
+            <div class="main-body-top-buttons">
+              <button class="main-body-top-buttons-content" type="buttons" onclick="location.href='https://discord.com/api/oauth2/authorize?client_id=<%= bot.user.id %>&permissions=8&scope=bot%20applications.commands'"><span class="main-body-top-buttons-contents">Invite Me</span>
+              <button class="main-body-top-buttons-content" type="buttons" onclick="location.href='/dashboard'"><span class="main-body-top-buttons-contents" style="font-size: 15px;">Go to Dashboard</span>
+            </div>
+          </div>
+          <div class="main-body-content">
+            <h1 style="font-family: 'Roboto Condensed', sans-serif; text-transform: uppercase; font-size: 60px;">Features</h1>
+            <br>
+            <br>
+            <div class="main-body-content-container">
+              <h1 style="margin-right: 40px; padding-left: 50px; text-align: right; font-size: 50px; color:#5663f7;">DJ Only Mode<br><p style="font-size: 20px; color: rgb(255, 255, 255, .55);">Only users have Dj Role can control the music</p></h1><img src="https://cdn.discordapp.com/attachments/899498088660627476/922417949686497340/unknown.png">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="main-body-content-container">
+              <img src="https://media.discordapp.net/attachments/899498088660627476/922421445475303424/unknown.png"><h1 style="margin-left: 40px; text-align: left; font-size: 50px; color:#5663f7;">Ultimate Music Experience<br><p style="font-size: 20px; color: rgb(255, 255, 255, .55);">Enjoy listening music with awesome filters and no lag</p></h1>
+            </div>
+          </div>
+        </section>
+        <%- include("components/footer") -%>
+    </body>
+</html>

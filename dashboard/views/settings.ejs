@@ -1,0 +1,60 @@
+<%- include("components/header") -%>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body>
+    <section>
+      <div class="main-body-top-head">
+        <h1 style="font-weight: bolder;">
+          <img src="<%= bot.user.displayAvatarURL() %>" style="width: 5%;margin-top: -0.5%;"><span style="font-size: 40px">Welcome To<span style="color:#5663f7; text-transform: uppercase;"> <%= guild.name %> </span>Dashboard</span>
+        </h1>
+        <br>
+        <br>
+        <div class="main-body-top-content">
+          <div class="main-body-top-modules">
+            <h1 style="font-size: 30px; display: inline-block;">⚙ Bot Settings for <span style="color: #5663f7;"><%= guild.name %></span>
+            <% if(alert) { %>
+              <div class="alert-box">
+                <h1 style="font-size: 20px"><%= alert %></h1>
+              </div>
+            <% } %>
+              <form method="POST">
+                <p style="text-align: left;" class="server-prefix-form">Server Prefix <br><input name="prefix" value="<%= bot.Guilds.get(guild.id, "prefix") %>" type="text" placeholder="Server Prefix"></input></p>
+                <div class="server-settings-input">
+                  <% const autodeleteCMD = bot.Guilds.get(guild.id, "deletecmd");
+                  if(autodeleteCMD === 1) { %>
+                    <input id="c1" name="autodelete_CMD" type="checkbox" checked>
+                  <% } else { %>
+                    <input id="c1" name="autodelete_CMD" type="checkbox">
+                  <% } %>
+                  <label for="c1">Delete command after executed!</label>
+                <br>
+                <% const { dj } = bot.Guilds.get(guild.id);
+                  if(dj === 1) { %>
+                    <input id="c2" name="dj" type="checkbox" checked>
+                  <% } else { %>
+                    <input id="c2" name="dj" type="checkbox">
+                  <% } %>
+                  <label for="c2">DJ Only (if you enable this, only user have a dj role can control the music)</label>
+                <br>
+                <p>DJ Role <br><select name="djrole" class="djrole-selection">
+                  <% guild.roles.cache.filter(role=>!role.managed).sort((a, b) => b.rawPosition - a.rawPosition).forEach((role, i) => { %>
+                    <option value="<%= role.id %>" <%= bot.Guilds.get(guild.id, "djrole").includes(role.id) ? "selected" : ""%>>@<%= role.name %></option>
+                  <% }) %>
+                </select></p>
+                </div>
+                <br>
+                <button class="btn-save-changes" type="submit" name="submit">Save Changes</button>
+              </form>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include("components/footer") -%>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "discord": {
+    "prefix": "!",
+    "token": "token!"
+  },
+  "emoji": {
+    "success": "✅",
+    "failed": "❌",
+    "error": "⚠",
+    "stop": "🛑",
+    "goodbye": "👋",
+    "music": "🎶",
+    "radio": "🔘",
+    "volume": "🔊",
+    "loop": "🔄"
+  },
+  "dashboard": {
+    "clientId": "clientId",
+    "clientSecret": "Secret",
+    "URL": "https://herocraftmusic.itsherohero.repl.co",
+    "port": "80",
+    "support": "https://discord.gg/S6d777Ph8t"
+  }
+}
