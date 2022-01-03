@@ -1,5 +1,6 @@
 # HeroCraftMusic
 https://herocraftmusic.tk/
+- [ItsHeroPH](https://discord.com/users/614624050286952481)
 
 # Support
 
