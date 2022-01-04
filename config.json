@@ -1,7 +1,7 @@
 {
   "discord": {
-    "prefix": "!",
-    "token": "token!"
+    "prefix": "PREFIX",
+    "token": "BOT_TOKEN"
   },
   "emoji": {
     "success": "✅",
